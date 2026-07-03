@@ -1,0 +1,6 @@
+{
+  "name": "Studio Luah",
+  "description": "Landing page de alta sofisticação para o Studio Luah, especializado em cabelos, unhas, cílios e sobrancelhas com atendimento premium.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
