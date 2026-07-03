@@ -120,7 +120,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               Agendar Horário
             </a>
             <div className="text-center text-xs text-grafite/50 tracking-wider">
-              Av. Paulista, 1000 • São Paulo, SP
+              Av. Plínio Brasil Milano, 280 • Porto Alegre, RS
             </div>
           </div>
         </div>

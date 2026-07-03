@@ -255,14 +255,11 @@ export default function App() {
                 <div className="flex gap-2.5 items-start">
                   <MapPin size={16} className="text-dourado shrink-0 mt-0.5" />
                   <span>
-                    Av. Paulista, 1000 — 4º Andar, Conjunto 42<br />
-                    Bela Vista, São Paulo - SP<br />
-                    CEP: 01310-100
+                    Av. Plínio Brasil Milano, 280<br />
+                    Higienópolis, Porto Alegre - RS<br />
+                    CEP: 90520-000
                   </span>
                 </div>
-                <p className="text-[10px] text-grafite/50 pl-6">
-                  (Estacionamento valet no local • A 200m do Metrô Trianon-Masp)
-                </p>
               </div>
             </div>
 
