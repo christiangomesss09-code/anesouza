@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Maximize2, X, ChevronRight, Calendar } from 'lucide-react';
 
 // Import our custom generated space image
-import spaceInteriorImg from '../assets/images/space_interior_1783088672252.jpg';
+import spaceInteriorVideo from '../assets/images/788ac316-f5ef-4fce-bb73-76372141c8e0.mp4';
 
 export default function SpaceGallery() {
   const spaceImages = [
@@ -10,7 +10,7 @@ export default function SpaceGallery() {
       id: 's-1',
       title: 'Espaço de Atendimento Individual',
       subtitle: 'Tranquilidade e privacidade',
-      url: spaceInteriorImg,
+      url: spaceInteriorVideo,
       description: 'Nosso canto de relaxamento com acabamento em gesso texturizado, espelhos minimalistas retroiluminados e detalhes florais botânicos.'
     },
     {
@@ -63,12 +63,23 @@ export default function SpaceGallery() {
           
           {/* Main Large Image Viewer */}
           <div className="lg:col-span-8 group relative overflow-hidden bg-perola border border-cinza-medio/50 aspect-video">
-            <img
-              src={activeImage.url}
-              alt={activeImage.title}
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out"
-            />
+            {activeImage.url.endsWith('.mp4') ? (
+              <video
+                src={activeImage.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+              />
+            ) : (
+              <img
+                src={activeImage.url}
+                alt={activeImage.title}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+              />
+            )}
             
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-grafite/40 via-transparent to-transparent pointer-events-none" />
@@ -161,12 +172,23 @@ export default function SpaceGallery() {
           </button>
           
           <div className="max-w-5xl max-h-[80vh] overflow-hidden relative border border-white/10">
-            <img
-              src={activeImage.url}
-              alt={activeImage.title}
-              referrerPolicy="no-referrer"
-              className="object-contain max-h-[80vh] max-w-full"
-            />
+            {activeImage.url.endsWith('.mp4') ? (
+              <video
+                src={activeImage.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="object-contain max-h-[80vh] max-w-full"
+              />
+            ) : (
+              <img
+                src={activeImage.url}
+                alt={activeImage.title}
+                referrerPolicy="no-referrer"
+                className="object-contain max-h-[80vh] max-w-full"
+              />
+            )}
           </div>
 
           <div className="text-center text-perola mt-6 max-w-md">

@@ -11,7 +11,7 @@ import ResultsGallery from './components/ResultsGallery';
 import Testimonials from './components/Testimonials';
 
 // Images
-import heroSalonImg from './assets/images/hero_salon_1783088623394.jpg';
+import heroVideo from './assets/images/video_01.mp4';
 import logoImg from './assets/images/LOGO TRANSP.png';
 
 export default function App() {
@@ -102,10 +102,12 @@ export default function App() {
             <div className="w-full max-w-lg aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg">
               <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
               
-              <img
-                src={heroSalonImg}
-                alt="Studio Luah Luxury Interior"
-                referrerPolicy="no-referrer"
+              <video
+                src={heroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[1.5s] ease-out"
               />
             </div>

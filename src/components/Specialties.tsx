@@ -4,6 +4,7 @@ import { Sparkles, Scissors, Sparkle, Eye, Compass } from 'lucide-react';
 import specialtyHairImg from '../assets/images/specialty_hair_1783088636034.jpg';
 import specialtyNailsImg from '../assets/images/specialty_nails_1783088647169.jpg';
 import specialtyLashesBrowsImg from '../assets/images/specialty_lashes_brows_1783088659609.jpg';
+import specialtyCiliosImg from '../assets/images/CILIOS.png';
 
 export default function Specialties() {
   const specialties = [
@@ -31,7 +32,7 @@ export default function Specialties() {
       subtitle: 'Olhar Marcante & Natural',
       icon: <Eye className="text-dourado" size={18} />,
       description: 'Alongamentos fio a fio e volume russo elaborados artesanalmente com fios ultra-leves que valorizam o seu olhar com leveza, elegância, naturalidade e durabilidade.',
-      image: specialtyLashesBrowsImg,
+      image: specialtyCiliosImg,
       cta: 'Ver serviços de cílios'
     },
     {

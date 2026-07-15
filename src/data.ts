@@ -134,7 +134,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'cilios',
     title: 'Volume Russo Soft',
     description: 'Volume sofisticado sem carregar o olhar. Leveza e elegância.',
-    imageUrl: 'https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/src/assets/images/CILIOS.png'
   },
   {
     id: 'g-4',
