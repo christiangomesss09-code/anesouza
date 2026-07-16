@@ -108,38 +108,13 @@ export default function SpaceGallery() {
           <div className="lg:col-span-4 space-y-6">
             
             {/* Description of active spot */}
-            <div className="bg-dourado/5 border border-cinza-medio p-6 md:p-8 space-y-3">
+            <div className="bg-dourado/5 border border-cinza-medio p-6 md:p-8 space-y-3 h-full">
               <h4 className="font-serif text-lg text-grafite font-medium border-b border-cinza-medio/60 pb-2">
                 Conheça os detalhes
               </h4>
               <p className="font-sans text-xs md:text-sm text-grafite/80 leading-relaxed font-light">
                 {activeImage.description}
               </p>
-            </div>
-
-            {/* Selector Buttons Grid */}
-            <div className="space-y-3">
-              <span className="font-sans text-[10px] uppercase tracking-widest text-grafite/50 font-bold block mb-1">
-                Selecione um ambiente:
-              </span>
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5">
-                {spaceImages.map((img, idx) => (
-                  <button
-                    key={img.id}
-                    onClick={() => setActiveIdx(idx)}
-                    className={`p-3 text-left border flex items-center justify-between transition-all duration-300 ${
-                      activeIdx === idx
-                        ? 'bg-grafite border-grafite text-perola'
-                        : 'bg-perola border-cinza-medio text-grafite/80 hover:border-grafite/30'
-                    }`}
-                  >
-                    <span className="font-sans text-xs font-semibold tracking-wide truncate">
-                      {img.title.split(' ')[0]} {img.title.split(' ')[1] || ''}
-                    </span>
-                    <ChevronRight size={14} className={activeIdx === idx ? 'text-dourado' : 'text-grafite/50'} />
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* Quick action */}
