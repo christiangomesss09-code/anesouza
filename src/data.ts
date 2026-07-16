@@ -120,14 +120,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'cabelos',
     title: 'Loiras por Studio Luah',
     description: 'Luminosidade com preservação de integridade capilar e tons perolados impecáveis.',
-    imageUrl: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/src/assets/images/2.png'
   },
   {
     id: 'g-2',
     category: 'unhas',
     title: 'Manicure Minimalista Chic',
     description: 'Cores neutras e acabamento de alta definição com cutilagem perfeita.',
-    imageUrl: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/src/assets/images/3.png'
   },
   {
     id: 'g-3',
@@ -141,14 +141,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'sobrancelhas',
     title: 'Design de Sobrancelhas & Alinhamento',
     description: 'Harmonização de traços com máxima naturalidade e simetria.',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/src/assets/images/4.png'
   },
   {
     id: 'g-5',
     category: 'cabelos',
     title: 'Corte Bob Clássico',
     description: 'Corte sofisticado com linhas limpas e movimento natural.',
-    imageUrl: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800'
+    imageUrl: '/src/assets/images/6.png'
   },
   {
     id: 'g-6',

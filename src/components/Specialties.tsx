@@ -1,9 +1,9 @@
 import { Sparkles, Scissors, Sparkle, Eye, Compass } from 'lucide-react';
 
 // Import our custom generated images
-import specialtyHairImg from '../assets/images/specialty_hair_1783088636034.jpg';
-import specialtyNailsImg from '../assets/images/specialty_nails_1783088647169.jpg';
-import specialtyLashesBrowsImg from '../assets/images/specialty_lashes_brows_1783088659609.jpg';
+import specialtyHairImg from '../assets/images/2.png';
+import specialtyNailsImg from '../assets/images/3.png';
+import specialtyLashesBrowsImg from '../assets/images/4.png';
 import specialtyCiliosImg from '../assets/images/CILIOS.png';
 
 export default function Specialties() {
