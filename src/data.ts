@@ -114,41 +114,47 @@ export const SERVICES: Service[] = [
   }
 ];
 
+import img2 from './assets/images/2.png';
+import img3 from './assets/images/3.png';
+import imgCilios from './assets/images/CILIOS.png';
+import img4 from './assets/images/4.png';
+import img6 from './assets/images/6.png';
+
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g-1',
     category: 'cabelos',
     title: 'Loiras por Studio Luah',
     description: 'Luminosidade com preservação de integridade capilar e tons perolados impecáveis.',
-    imageUrl: '/src/assets/images/2.png'
+    imageUrl: img2
   },
   {
     id: 'g-2',
     category: 'unhas',
     title: 'Manicure Minimalista Chic',
     description: 'Cores neutras e acabamento de alta definição com cutilagem perfeita.',
-    imageUrl: '/src/assets/images/3.png'
+    imageUrl: img3
   },
   {
     id: 'g-3',
     category: 'cilios',
     title: 'Volume Russo Soft',
     description: 'Volume sofisticado sem carregar o olhar. Leveza e elegância.',
-    imageUrl: '/src/assets/images/CILIOS.png'
+    imageUrl: imgCilios
   },
   {
     id: 'g-4',
     category: 'sobrancelhas',
     title: 'Design de Sobrancelhas & Alinhamento',
     description: 'Harmonização de traços com máxima naturalidade e simetria.',
-    imageUrl: '/src/assets/images/4.png'
+    imageUrl: img4
   },
   {
     id: 'g-5',
     category: 'cabelos',
     title: 'Corte Bob Clássico',
     description: 'Corte sofisticado com linhas limpas e movimento natural.',
-    imageUrl: '/src/assets/images/6.png'
+    imageUrl: img6
   },
   {
     id: 'g-6',
