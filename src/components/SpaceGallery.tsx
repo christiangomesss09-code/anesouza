@@ -12,27 +12,6 @@ export default function SpaceGallery() {
       subtitle: 'Tranquilidade e privacidade',
       url: spaceInteriorVideo,
       description: 'Nosso canto de relaxamento com acabamento em gesso texturizado, espelhos minimalistas retroiluminados e detalhes florais botânicos.'
-    },
-    {
-      id: 's-2',
-      title: 'Recepção & Lounge Executivo',
-      subtitle: 'Seja recebida com carinho',
-      url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
-      description: 'Lounge acolhedor decorado em tons de off-white e carvalho natural, onde servimos nossa carta de cafés e chás sensoriais.'
-    },
-    {
-      id: 's-3',
-      title: 'Estação de Beleza Cabelos',
-      subtitle: 'Iluminação técnica impecável',
-      url: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=1200',
-      description: 'Poltronas anatômicas em couro macio e espelhos de alta fidelidade cromática para visualização precisa da cor dos seus fios.'
-    },
-    {
-      id: 's-4',
-      title: 'Camarim cílios & sobrancelhas',
-      subtitle: 'Conforto absoluto',
-      url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200',
-      description: 'Macas articuladas e ergonômicas preparadas para que você possa descansar profundamente durante seus rituais do olhar.'
     }
   ];
 
