@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Instagram, Phone, MapPin, Sparkles, ArrowUpRight, ArrowDown } from 'lucide-react';
+import { Calendar, Instagram, Phone, MapPin, Sparkles, ArrowDown, Eye, Compass } from 'lucide-react';
 
 // Subcomponents
 import Navbar from './components/Navbar';
 import BookingModal from './components/BookingModal';
 import Specialties from './components/Specialties';
 import Experience from './components/Experience';
-import SpaceGallery from './components/SpaceGallery';
 import ResultsGallery from './components/ResultsGallery';
-import Testimonials from './components/Testimonials';
 
 // Images
-import heroVideo from './assets/images/video_01.mp4';
-import logoImg from './assets/images/LOGO TRANSP.png';
+import heroVideo from './assets/images/video/video-apresentacao-horizontal.mp4';
+import logoImg from './assets/images/lash/logo nova.png';
+import browsImg from './assets/images/novas imagens/sobrancelha-design.webp';
+import lashesImg from './assets/images/novas imagens/cilios-fio-a-fio-olho-azul.webp';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [bookingCategory, setBookingCategory] = useState<'cabelos' | 'unhas' | 'cilios' | 'sobrancelhas' | 'todos'>('todos');
+  const [bookingCategory, setBookingCategory] = useState<'cilios' | 'sobrancelhas' | 'todos'>('todos');
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
 
   useEffect(() => {
@@ -36,6 +36,8 @@ export default function App() {
     setBookingCategory(category);
     setIsBookingOpen(true);
   };
+
+  const WA_LINK = 'http://wa.me/+5551980889798/';
 
   return (
     <div className="min-h-screen bg-perola flex flex-col relative text-grafite antialiased selection:bg-dourado selection:text-perola">
@@ -57,26 +59,26 @@ export default function App() {
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="space-y-4">
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-grafite leading-[1.1]">
-                A beleza de uma <span className="italic font-normal text-rose">experiência</span> exclusiva.
+                Seu olhar merece ser <span className="italic font-normal text-rose">único</span>.
               </h1>
             </div>
 
             <p className="font-sans text-sm md:text-base text-grafite/80 leading-relaxed font-light max-w-xl">
-              Não vendemos serviços de beleza. Entregamos uma experiência de exclusividade e cuidado. Um momento pensado para você, com conforto e sofisticação em cada detalhe.
+              Realce sua beleza natural com técnicas personalizadas de Lash Design e Design de Sobrancelhas. Cada detalhe é pensado para valorizar seus traços, respeitando a harmonia do seu rosto e o resultado que você deseja.
             </p>
 
             {/* Specialties bullet line */}
             <div className="py-2 border-y border-cinza-medio/40 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs md:text-sm text-grafite font-medium">
-              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Cabelos</span>
-              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Unhas</span>
-              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Cílios</span>
-              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Sobrancelhas</span>
+              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Atendimento personalizado</span>
+              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Técnica</span>
+              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Precisão</span>
+              <span className="flex items-center gap-1.5 font-serif tracking-wider"><span className="w-1.5 h-1.5 rounded-full bg-dourado" /> Naturalidade</span>
             </div>
 
             {/* CTA Trigger Button */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
-                href="http://wa.me/+5551980889798/"
+                href={WA_LINK}
                 target="_blank"
                 rel="noreferrer"
                 className="font-sans text-xs uppercase tracking-widest bg-grafite text-perola hover:bg-dourado px-8 py-4 border border-grafite hover:border-dourado transition-all duration-300 font-bold rounded-none shadow-md flex items-center justify-center gap-2 group"
@@ -90,7 +92,7 @@ export default function App() {
                 href="#especialidades"
                 className="font-sans text-xs uppercase tracking-widest bg-transparent border border-cinza-medio text-grafite hover:text-grafite hover:border-grafite px-8 py-4 transition-all duration-300 font-semibold rounded-none flex items-center justify-center gap-2"
               >
-                Conhecer Especialidades
+                Conhecer Serviços
                 <ArrowDown size={14} className="animate-bounce" />
               </a>
             </div>
@@ -122,7 +124,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* QUIEM SOMOS / INTRODUCTION */}
+      {/* SEÇÃO 2 — CONEXÃO */}
       <section className="py-24 md:py-32 bg-perola relative border-y border-cinza-medio/40">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
@@ -131,10 +133,10 @@ export default function App() {
             {/* Title / Statement */}
             <div className="lg:col-span-5 space-y-4">
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block">
-                Essência da Marca
+                Mais do que um procedimento
               </span>
               <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
-                Um estúdio batizado com <span className="italic text-rose">afeto</span>.
+                Um cuidado com <span className="italic text-rose">você</span>.
               </h2>
               <div className="w-12 h-[1px] bg-dourado mt-6" />
             </div>
@@ -142,17 +144,17 @@ export default function App() {
             {/* Paragraph Description */}
             <div className="lg:col-span-7 space-y-6 lg:pl-12">
               <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
-                O nome nasce de Luara, filha da Fran. Cada detalhe da experiência carrega o cuidado de quem faz por amor.
+                Seu rosto tem características únicas. Por isso, não acreditamos em um formato padrão de beleza.
               </p>
               
               <div className="w-full h-[1px] bg-cinza-medio/30" />
               
               <p className="font-sans text-sm md:text-base text-grafite/80 leading-relaxed font-light">
-                Para mulheres que valorizam qualidade acima de preço. Que buscam uma experiência completa de atendimento, frequentam ambientes premium e investem em autocuidado.
+                Na Ane Souza, cada atendimento é pensado individualmente para criar um resultado que combine com seu olhar, seu rosto e seu estilo.
               </p>
 
               <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold">
-                Sempre estúdio, nunca salão — falamos de momento e exclusividade.
+                Porque realçar sua beleza não significa mudar quem você é.
               </p>
             </div>
 
@@ -161,57 +163,192 @@ export default function App() {
         </div>
       </section>
 
-      {/* SPECIALTIES (CABELOS • UNHAS • CÍLIOS • SOBRANCELHAS) */}
+      {/* SEÇÃO 3 — SERVIÇOS */}
       <Specialties />
 
-      {/* EXPERIÊNCIA PILLARS */}
+      {/* SEÇÃO 4 — SOBRANCELHAS */}
+      <section id="sobrancelhas" className="py-24 md:py-32 bg-perola relative border-y border-cinza-medio/40">
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-dourado/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Imagem */}
+            <div className="lg:col-span-6 relative">
+              <div className="aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:mx-0">
+                <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
+                <img
+                  src={browsImg}
+                  alt="Design de Sobrancelhas"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Texto */}
+            <div className="lg:col-span-6 space-y-6 lg:pl-8">
+              <div className="space-y-4">
+                <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block">
+                  Design de Sobrancelhas
+                </span>
+                <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
+                  Sobrancelhas que <span className="italic text-rose">valorizam</span> o seu rosto.
+                </h2>
+                <div className="w-12 h-[1px] bg-dourado" />
+              </div>
+
+              <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
+                O design de sobrancelhas vai muito além de remover fios.
+              </p>
+              
+              <p className="font-sans text-sm md:text-base text-grafite/80 leading-relaxed font-light">
+                É um trabalho de proporção, simetria e harmonia, respeitando o formato natural da sua sobrancelha para criar um resultado elegante e personalizado.
+              </p>
+
+              <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold">
+                Seu rosto não é igual ao de ninguém. Seu design também não precisa ser.
+              </p>
+
+              <div className="pt-4">
+                <a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest bg-grafite text-perola hover:bg-dourado px-8 py-4 border border-grafite hover:border-dourado transition-all duration-300 font-bold rounded-none shadow-md group"
+                >
+                  <Compass size={14} />
+                  Quero minhas sobrancelhas
+                  <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 5 — LASH DESIGN */}
+      <section id="lash-design" className="py-24 md:py-32 bg-perola relative">
+        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-rose/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Texto */}
+            <div className="lg:col-span-6 lg:order-1 space-y-6 lg:pr-8 order-2">
+              <div className="space-y-4">
+                <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block">
+                  Lash Design
+                </span>
+                <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
+                  Um olhar que <span className="italic text-rose">fala</span> por você.
+                </h2>
+                <div className="w-12 h-[1px] bg-dourado" />
+              </div>
+
+              <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
+                O Lash Design é pensado para destacar os olhos de forma personalizada.
+              </p>
+              
+              <p className="font-sans text-sm md:text-base text-grafite/80 leading-relaxed font-light">
+                Considerando o formato do seu olhar e o efeito que você deseja, cada fio é estrategicamente posicionado para entregar o resultado ideal.
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+                  <p className="font-sans text-sm text-grafite font-medium">Mais definição.</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+                  <p className="font-sans text-sm text-grafite font-medium">Mais presença.</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+                  <p className="font-sans text-sm text-grafite font-medium">Mais confiança.</p>
+                </div>
+              </div>
+
+              <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold pt-2">
+                Sem perder a sua essência.
+              </p>
+
+              <div className="pt-4">
+                <a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest bg-grafite text-perola hover:bg-dourado px-8 py-4 border border-grafite hover:border-dourado transition-all duration-300 font-bold rounded-none shadow-md group"
+                >
+                  <Eye size={14} />
+                  Quero meus cílios
+                  <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Imagem */}
+            <div className="lg:col-span-6 lg:order-2 relative order-1">
+              <div className="aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:ml-auto lg:mr-0">
+                <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
+                <img
+                  src={lashesImg}
+                  alt="Lash Design"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 6 — DIFERENCIAL */}
       <Experience />
 
-      {/* NOSSO ESPAÇO PHYSICAL INTERIOR GALLERY */}
-      <SpaceGallery />
-
-      {/* PORTFOLIO RESULTS GALLERY */}
+      {/* SEÇÃO 7 — RESULTADO */}
       <ResultsGallery />
 
-      {/* CLIENT TESTIMONIALS */}
-      <Testimonials />
-
-      {/* FINAL CALL TO ACTION (CTA) */}
+      {/* CTA FINAL */}
       <section className="py-24 md:py-32 bg-grafite text-perola relative overflow-hidden text-center">
         {/* Ambient background accent */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-dourado/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-8">
           <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block">
-            Seu Momento Luah
+            Pronta para valorizar o seu olhar?
           </span>
           
           <h2 className="font-serif text-4xl md:text-6xl font-light tracking-wide leading-tight">
-            A <span className="italic font-normal text-rose">exclusividade</span> que você merece.
+            Agende seu horário com a <span className="italic font-normal text-rose">Ane Souza</span>.
           </h2>
           
           <p className="font-sans text-sm md:text-base text-perola/80 leading-relaxed max-w-xl mx-auto font-light">
-            Agende seu horário e descubra uma nova forma de viver o autocuidado. Sinta a recepção e o acolhimento do Studio Luah.
+            Descubra um design pensado especialmente para você.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
             <a
-              href="http://wa.me/+5551980889798/"
+              href={WA_LINK}
               target="_blank"
               rel="noreferrer"
               className="w-full sm:w-auto font-sans text-xs uppercase tracking-widest bg-dourado text-perola hover:bg-rose px-8 py-4 transition-all duration-300 font-bold rounded-none shadow-md flex items-center justify-center gap-2 group"
             >
               <Calendar size={14} />
-              Agendar pelo WhatsApp
+              Agendar meu horário
+              <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
-            
-            <a
-              href="http://wa.me/+5551980889798/"
-              className="w-full sm:w-auto font-sans text-xs uppercase tracking-widest bg-transparent border border-perola/20 text-perola hover:text-dourado hover:border-dourado px-8 py-4 transition-all duration-300 font-semibold rounded-none flex items-center justify-center gap-2"
-            >
-              <Phone size={14} />
-              Ligar no Estúdio
-            </a>
+          </div>
+
+          <div className="pt-8 space-y-1">
+            <p className="font-serif text-lg tracking-wide text-perola font-light">
+              Ane Souza
+            </p>
+            <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-dourado font-semibold">
+              Lash Designer &amp; Brow Designer
+            </p>
           </div>
         </div>
       </section>
@@ -223,65 +360,86 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-cinza-medio/30 pb-16">
             
             {/* Logo column */}
-            <div className="md:col-span-5 space-y-4">
+            <div className="md:col-span-6 space-y-4">
               <img 
                 src={logoImg} 
-                alt="Studio Luah Logo" 
+                alt="Ane Souza Logo" 
                 className="h-24 md:h-32 w-auto"
               />
               <p className="font-sans text-xs text-grafite/70 leading-relaxed font-light max-w-sm pt-2">
-                Uma experiência de exclusividade e cuidado. Um ambiente preparado para valorizar quem você é.
+                Realce sua beleza natural com técnicas personalizadas de Lash Design e Design de Sobrancelhas. Valorizando seus traços com harmonia e naturalidade.
               </p>
               
               {/* Instagram link */}
-              <div className="pt-2">
-                <a
-                  href="https://www.instagram.com/luahstudiodebeleza/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-dourado hover:text-rose transition-colors font-bold group"
-                >
-                  <Instagram size={14} />
-                  @luahstudiodebeleza
-                  <ArrowUpRight size={12} className="transform transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Address Column */}
-            <div className="md:col-span-4 space-y-4">
-              <h4 className="font-sans text-[10px] uppercase tracking-widest text-grafite/50 font-bold border-b border-cinza-medio/30 pb-2">
-                Endereço & Acesso
-              </h4>
-              <div className="space-y-3 font-sans text-xs text-grafite/80 leading-relaxed font-light">
-                <div className="flex gap-2.5 items-start">
-                  <MapPin size={16} className="text-dourado shrink-0 mt-0.5" />
-                  <span>
-                    Av. Plínio Brasil Milano, 280<br />
-                    Higienópolis, Porto Alegre - RS<br />
-                    CEP: 90520-000
-                  </span>
+              <div className="pt-2 space-y-3">
+                <div className="space-y-1">
+                  <p className="font-serif text-lg tracking-wide text-grafite font-light">
+                    Ane Souza
+                  </p>
+                  <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-dourado font-semibold">
+                    Lash Designer &amp; Brow Designer
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Contact Column */}
-            <div className="md:col-span-3 space-y-4">
-              <h4 className="font-sans text-[10px] uppercase tracking-widest text-grafite/50 font-bold border-b border-cinza-medio/30 pb-2">
-                Contatos & Horários
-              </h4>
-              <div className="space-y-3 font-sans text-xs text-grafite/80 leading-relaxed font-light">
-                <div className="flex gap-2.5 items-start">
-                  <Phone size={16} className="text-dourado shrink-0 mt-0.5" />
-                  <a href="http://wa.me/+5551980889798/" className="hover:text-dourado font-medium">
-                    +55 (51) 98088-9798
-                  </a>
+            <div className="md:col-span-6 space-y-6">
+              <div className="space-y-4">
+                <h4 className="font-sans text-[10px] uppercase tracking-widest text-grafite/50 font-bold border-b border-cinza-medio/30 pb-2">
+                  Contato &amp; Atendimento
+                </h4>
+                <div className="space-y-3 font-sans text-xs text-grafite/80 leading-relaxed font-light">
+                  <div className="flex gap-2.5 items-start">
+                    <MapPin size={16} className="text-dourado shrink-0 mt-0.5" />
+                    <span>
+                      Av. Plínio Brasil Milano, 280<br />
+                      Higienópolis, Porto Alegre - RS<br />
+                      CEP: 90520-000
+                    </span>
+                  </div>
+                  <div className="flex gap-2.5 items-start">
+                    <Phone size={16} className="text-dourado shrink-0 mt-0.5" />
+                    <a href={WA_LINK} target="_blank" rel="noreferrer" className="hover:text-dourado font-medium">
+                      +55 (51) 98088-9798
+                    </a>
+                  </div>
+                  <div className="flex gap-2.5 items-start">
+                    <Instagram size={16} className="text-dourado shrink-0 mt-0.5" />
+                    <a
+                      href="https://www.instagram.com/luahstudiodebeleza/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-dourado font-medium"
+                    >
+                      @anesouza.studio
+                    </a>
+                  </div>
                 </div>
-                
-                <p className="text-grafite/60 pt-1 leading-relaxed">
+              </div>
+              
+              <div className="space-y-3 pt-2">
+                <h4 className="font-sans text-[10px] uppercase tracking-widest text-grafite/50 font-bold border-b border-cinza-medio/30 pb-2">
+                  Horários
+                </h4>
+                <p className="text-grafite/60 leading-relaxed font-sans text-xs">
                   Terça a Sábado: 09:00 às 19:30<br />
                   Domingo e Segunda: Fechado
                 </p>
+              </div>
+
+              {/* CTA Footer */}
+              <div className="pt-4">
+                <a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-[10px] uppercase tracking-widest bg-grafite text-perola hover:bg-dourado px-6 py-3 border border-grafite hover:border-dourado transition-all duration-300 font-bold rounded-none shadow-sm group"
+                >
+                  <Calendar size={12} />
+                  Agendar horário
+                  <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
               </div>
             </div>
 
@@ -290,7 +448,7 @@ export default function App() {
           {/* Legal Bar */}
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <span className="font-sans text-[10px] text-grafite/50 tracking-wider">
-              COPYRIGHT © 2026 STUDIO LUAH. TODOS OS DIREITOS RESERVADOS.
+              COPYRIGHT © 2026 ANE SOUZA. TODOS OS DIREITOS RESERVADOS.
             </span>
             <div className="flex gap-6 font-sans text-[10px] tracking-wider text-grafite/50">
               <span className="hover:text-grafite cursor-pointer">Termos de Uso</span>

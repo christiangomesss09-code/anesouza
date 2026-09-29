@@ -1,22 +1,22 @@
 import { useState } from 'react';
-import { X, Sparkles, Calendar, ChevronRight } from 'lucide-react';
+import { X, Sparkles, Calendar } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data';
 import { GalleryItem } from '../types';
 
+const WA_LINK = 'http://wa.me/+5551980889798/';
+
 export default function ResultsGallery() {
-  const [filter, setFilter] = useState<'todos' | 'cabelos' | 'unhas' | 'cilios' | 'sobrancelhas'>('todos');
+  const [filter, setFilter] = useState<'todos' | 'cilios' | 'sobrancelhas'>('todos');
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
   const categories = [
     { id: 'todos', label: 'Todos' },
-    { id: 'cabelos', label: 'Cabelos' },
-    { id: 'unhas', label: 'Unhas' },
     { id: 'cilios', label: 'Cílios' },
     { id: 'sobrancelhas', label: 'Sobrancelhas' }
   ] as const;
 
   const filteredItems = filter === 'todos'
-    ? GALLERY_ITEMS
+    ? GALLERY_ITEMS.filter((item) => item.category === 'cilios' || item.category === 'sobrancelhas')
     : GALLERY_ITEMS.filter((item) => item.category === filter);
 
   return (
@@ -29,12 +29,32 @@ export default function ResultsGallery() {
             Resultados reais
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
-            Nossos resultados com <span className="italic font-normal text-rose">excelência</span>.
+            Quando você se olha no <span className="italic font-normal text-rose">espelho</span>.
           </h2>
-          <p className="font-sans text-xs md:text-sm text-grafite/70 leading-relaxed font-light mt-4">
-            Inspire-se com algumas das transformações e trabalhos realizados em nossas clientes no Studio Luah. O capricho técnico traduzido em autoestima.
+          <p className="font-sans text-xs md:text-sm text-grafite/70 leading-relaxed font-light mt-4 max-w-lg mx-auto">
+            O resultado precisa fazer sentido para você. A beleza está nos detalhes.
           </p>
-          <div className="w-16 h-[1px] bg-dourado mx-auto mt-6" />
+
+          <div className="space-y-3 mt-6 max-w-md mx-auto pt-2">
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+              <p className="font-sans text-sm text-grafite font-light">Um olhar mais marcante.</p>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+              <p className="font-sans text-sm text-grafite font-light">Uma sobrancelha mais harmoniosa.</p>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
+              <p className="font-sans text-sm text-grafite font-light">Cílios que valorizam seus olhos.</p>
+            </div>
+          </div>
+
+          <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold mt-8 max-w-md mx-auto">
+            Pequenas mudanças podem transformar a forma como você se sente.
+          </p>
+
+          <div className="w-16 h-[1px] bg-dourado mx-auto mt-8" />
         </div>
 
         {/* Filter Navigation */}
@@ -99,7 +119,7 @@ export default function ResultsGallery() {
 
         <div className="text-center mt-16 md:mt-24">
           <a
-            href="http://wa.me/+5551980889798/"
+            href={WA_LINK}
             target="_blank"
             rel="noreferrer"
             className="font-sans text-xs uppercase tracking-widest bg-transparent border border-grafite text-grafite hover:bg-grafite hover:text-perola px-8 py-4 transition-all duration-500 font-semibold rounded-none inline-flex items-center gap-2 group"
@@ -139,7 +159,7 @@ export default function ResultsGallery() {
                   {/* Close button inside panel for mobile */}
                   <div className="flex justify-between items-center border-b border-cinza-medio pb-4">
                     <span className="font-sans text-[10px] tracking-widest uppercase font-semibold text-dourado">
-                      Portfólio Studio Luah
+                      Portfólio Ane Souza
                     </span>
                     <button 
                       onClick={() => setSelectedItem(null)}
@@ -161,14 +181,14 @@ export default function ResultsGallery() {
                   <div className="p-4 bg-dourado/5 border border-dourado/20 flex gap-3 items-start">
                     <Sparkles size={16} className="text-dourado shrink-0 mt-0.5" />
                     <p className="font-sans text-[11px] text-grafite/80 leading-relaxed font-light">
-                      Trabalho executado sob rigoroso padrão de biossegurança e utilizando produtos de marcas premium internacionais.
+                      Trabalho executado sob rigoroso padrão de biossegurança e utilizando produtos premium.
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-3 mt-8 pt-6 border-t border-cinza-medio/60">
                     <a
-                      href="http://wa.me/+5551980889798/"
+                      href={WA_LINK}
                       target="_blank"
                       rel="noreferrer"
                       className="w-full flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-widest bg-grafite text-perola hover:bg-dourado px-6 py-4 transition-colors font-medium rounded-none shadow-sm"

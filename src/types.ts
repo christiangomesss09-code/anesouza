@@ -1,6 +1,6 @@
 export interface Service {
   id: string;
-  category: 'cabelos' | 'unhas' | 'cilios' | 'sobrancelhas';
+  category: 'cilios' | 'sobrancelhas';
   name: string;
   description: string;
   priceEstimate?: string;
@@ -9,7 +9,7 @@ export interface Service {
 
 export interface GalleryItem {
   id: string;
-  category: 'cabelos' | 'unhas' | 'cilios' | 'sobrancelhas';
+  category: 'cilios' | 'sobrancelhas';
   title: string;
   description: string;
   imageUrl: string;

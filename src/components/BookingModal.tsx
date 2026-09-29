@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { X, Check, Calendar, Clock, ArrowRight, ArrowLeft, User, Phone, ShoppingBag, Sparkles } from 'lucide-react';
 import { SERVICES, PROFESSIONALS } from '../data';
-import { Service, Professional } from '../types';
+import { Service } from '../types';
 
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  initialCategory?: 'cabelos' | 'unhas' | 'cilios' | 'sobrancelhas' | 'todos';
+  initialCategory?: 'cilios' | 'sobrancelhas' | 'todos';
 }
 
 export default function BookingModal({ isOpen, onClose, initialCategory = 'todos' }: BookingModalProps) {
@@ -100,7 +100,7 @@ export default function BookingModal({ isOpen, onClose, initialCategory = 'todos
 
     const servicesList = selectedServices.map(s => `  • ${s.name} (${s.priceEstimate})`).join('\n');
     
-    const text = `Olá Studio Luah! ✨ 
+    const text = `Olá Ane Souza! ✨ 
 Gostaria de solicitar um agendamento de horário personalizado:
 
 👤 *Cliente:* ${clientName}
@@ -134,8 +134,6 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
 
   const categories = [
     { id: 'todos', label: 'Todos' },
-    { id: 'cabelos', label: 'Cabelos' },
-    { id: 'unhas', label: 'Unhas' },
     { id: 'cilios', label: 'Cílios' },
     { id: 'sobrancelhas', label: 'Sobrancelhas' }
   ];
@@ -155,7 +153,7 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
         <div className="p-6 border-b border-cinza-medio/60 flex items-center justify-between">
           <div>
             <h3 className="font-serif text-xl md:text-2xl tracking-wider text-grafite font-light">
-              Agendamento Studio Luah
+              Agendamento Ane Souza
             </h3>
             <p className="font-sans text-[10px] uppercase tracking-widest text-dourado font-medium mt-1">
               Passo {step} de 5 • {step === 1 && 'Escolha os serviços'}
@@ -183,7 +181,7 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
                 <Sparkles className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">O que você deseja cuidar hoje?</h4>
                 <p className="text-xs text-grafite/70 mt-1">
-                  Selecione um ou mais serviços de nossa cartela exclusiva para montar seu atendimento ideal.
+                  Selecione um ou mais serviços para montar seu atendimento ideal.
                 </p>
               </div>
 
@@ -255,11 +253,11 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
                 <User className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">Escolha a profissional</h4>
                 <p className="text-xs text-grafite/70 mt-1">
-                  Nossa equipe de especialistas está pronta para proporcionar uma experiência exclusiva de beleza.
+                  Atendimento personalizado pensado especialmente para você.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 max-w-md mx-auto">
                 {/* Anyone option */}
                 <div
                   onClick={() => setSelectedProfessional('any')}
@@ -312,7 +310,7 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
                 <Calendar className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">Escolha a data e horário ideal</h4>
                 <p className="text-xs text-grafite/70 mt-1">
-                  Selecione sua preferência de dia e horário. Vamos validar a agenda física para lhe confirmar.
+                  Selecione sua preferência de dia e horário. Vamos validar a agenda para lhe confirmar.
                 </p>
               </div>
 
@@ -357,7 +355,7 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
               </div>
 
               <div className="text-center max-w-sm mx-auto p-4 bg-dourado/5 border border-cinza-medio/50 text-[11px] text-grafite/70">
-                📌 O estúdio funciona de Terça a Sábado, das 09:00 às 19:30.
+                📌 Atendimento de Terça a Sábado, das 09:00 às 19:30.
               </div>
             </div>
           )}
@@ -369,7 +367,7 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
                 <Phone className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">Seus dados de contato</h4>
                 <p className="text-xs text-grafite/70 mt-1">
-                  Precisamos apenas do seu nome e telefone para organizar seu atendimento exclusivo.
+                  Precisamos apenas do seu nome e telefone para organizar seu atendimento.
                 </p>
               </div>
 
@@ -409,9 +407,9 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
             <div className="space-y-6">
               <div className="text-center max-w-md mx-auto">
                 <Check className="mx-auto text-dourado bg-dourado/10 p-2 rounded-full mb-2" size={40} />
-                <h4 className="font-serif text-lg text-grafite">Tudo pronto para o seu autocuidado!</h4>
+                <h4 className="font-serif text-lg text-grafite">Tudo pronto para o seu momento!</h4>
                 <p className="text-xs text-grafite/70 mt-1">
-                  Confira abaixo o resumo do seu atendimento. Ao clicar no botão, você será direcionada para enviar o pedido no nosso WhatsApp oficial e finalizar o agendamento em instantes.
+                  Confira abaixo o resumo do seu atendimento. Ao clicar no botão, você será direcionada para enviar o pedido no WhatsApp e finalizar o agendamento.
                 </p>
               </div>
 

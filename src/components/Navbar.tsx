@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Calendar } from 'lucide-react';
-import logoImg from '../assets/images/LOGO TRANSP.png';
+import logoImg from '../assets/images/lash/logo nova.png';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -25,11 +25,10 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
   const navLinks = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Especialidades', href: '#especialidades' },
-    { name: 'Nossa Experiência', href: '#experiencia' },
-    { name: 'Espaço', href: '#espaco' },
+    { name: 'Sobrancelhas', href: '#sobrancelhas' },
+    { name: 'Lash Design', href: '#lash-design' },
+    { name: 'Diferencial', href: '#diferencial' },
     { name: 'Resultados', href: '#resultados' },
-    { name: 'Depoimentos', href: '#depoimentos' },
   ];
 
   const handleLinkClick = () => {
