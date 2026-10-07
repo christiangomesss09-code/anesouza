@@ -377,12 +377,12 @@ export default function App() {
                   <div className="flex gap-2.5 items-start">
                     <Instagram size={16} className="text-dourado shrink-0 mt-0.5" />
                     <a
-                      href="https://www.instagram.com/luahstudiodebeleza/"
+                      href="https://www.instagram.com/anecilios.cps?stkn=MTI0b3ZqenQyMGU2Zw%3D%3D"
                       target="_blank"
                       rel="noreferrer"
                       className="hover:text-dourado font-medium"
                     >
-                      @anesouza.studio
+                      @anecilios.cps
                     </a>
                   </div>
                 </div>
