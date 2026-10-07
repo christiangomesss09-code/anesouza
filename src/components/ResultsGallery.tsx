@@ -3,7 +3,7 @@ import { X, Sparkles, Calendar } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data';
 import { GalleryItem } from '../types';
 
-const WA_LINK = 'http://wa.me/+5551980889798/';
+const WA_LINK = 'http://wa.me/+5519994645445/';
 
 export default function ResultsGallery() {
   const [filter, setFilter] = useState<'todos' | 'cilios' | 'sobrancelhas'>('todos');
@@ -20,10 +20,9 @@ export default function ResultsGallery() {
     : GALLERY_ITEMS.filter((item) => item.category === filter);
 
   return (
-    <section id="resultados" className="py-24 md:py-32 bg-perola relative">
+    <section id="resultados" className="py-24 md:py-32 bg-perola">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block mb-3">
             Resultados reais
@@ -35,29 +34,17 @@ export default function ResultsGallery() {
             O resultado precisa fazer sentido para você. A beleza está nos detalhes.
           </p>
 
-          <div className="space-y-3 mt-6 max-w-md mx-auto pt-2">
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-              <p className="font-sans text-sm text-grafite font-light">Um olhar mais marcante.</p>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-              <p className="font-sans text-sm text-grafite font-light">Uma sobrancelha mais harmoniosa.</p>
-            </div>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-              <p className="font-sans text-sm text-grafite font-light">Cílios que valorizam seus olhos.</p>
-            </div>
+          <div className="space-y-2 mt-6 max-w-md mx-auto pt-2">
+            <p className="font-sans text-sm text-grafite font-light">Um olhar mais marcante.</p>
+            <p className="font-sans text-sm text-grafite font-light">Uma sobrancelha mais harmoniosa.</p>
+            <p className="font-sans text-sm text-grafite font-light">Cílios que valorizam seus olhos.</p>
           </div>
 
           <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold mt-8 max-w-md mx-auto">
             Pequenas mudanças podem transformar a forma como você se sente.
           </p>
-
-          <div className="w-16 h-[1px] bg-dourado mx-auto mt-8" />
         </div>
 
-        {/* Filter Navigation */}
         <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 mb-12">
           {categories.map((cat) => (
             <button
@@ -74,7 +61,6 @@ export default function ResultsGallery() {
           ))}
         </div>
 
-        {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, index) => (
             <div
@@ -82,8 +68,7 @@ export default function ResultsGallery() {
               onClick={() => setSelectedItem(item)}
               className="group cursor-pointer flex flex-col bg-perola border border-cinza-medio overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
             >
-              {/* Photo Area */}
-              <div className="aspect-[4/5] bg-perola overflow-hidden relative">
+              <div className="aspect-[4/5] bg-perola overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
@@ -91,20 +76,17 @@ export default function ResultsGallery() {
                   className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
                 />
                 
-                {/* Visual Cover Layer on Hover */}
-                <div className="absolute inset-0 bg-grafite/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-10 h-10 bg-perola/90 backdrop-blur-sm flex items-center justify-center border border-cinza-medio">
+                <div className="absolute inset-0 bg-grafite/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                  <div className="w-10 h-10 bg-perola/90 flex items-center justify-center border border-cinza-medio">
                     <span className="text-grafite font-serif text-lg font-light">+</span>
                   </div>
                 </div>
 
-                {/* Corner Category Tag */}
-                <span className="absolute bottom-4 left-4 bg-perola/90 backdrop-blur-md px-2.5 py-1 text-[8px] font-bold tracking-widest text-dourado uppercase border border-cinza-medio/40">
+                <span className="absolute bottom-4 left-4 bg-perola/90 px-2.5 py-1 text-[8px] font-bold tracking-widest text-dourado uppercase border border-cinza-medio/40">
                   {item.category}
                 </span>
               </div>
 
-              {/* Title Card */}
               <div className="p-5 space-y-1 bg-perola">
                 <h3 className="font-serif text-lg tracking-wide text-grafite font-medium group-hover:text-dourado transition-colors">
                   {item.title}
@@ -129,34 +111,28 @@ export default function ResultsGallery() {
           </a>
         </div>
 
-        {/* Lightbox / Details Modal */}
         {selectedItem && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop */}
             <div 
-              className="absolute inset-0 bg-grafite/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-grafite/80"
               onClick={() => setSelectedItem(null)}
             />
 
-            {/* Content Container */}
             <div className="bg-perola w-full max-w-3xl rounded-none border border-cinza-medio shadow-2xl relative z-10 grid grid-cols-1 md:grid-cols-12 max-h-[90vh] overflow-y-auto">
-              {/* Image Column */}
-              <div className="md:col-span-7 bg-perola relative aspect-[4/5] md:aspect-auto md:h-full min-h-[300px]">
+              <div className="md:col-span-7 bg-perola aspect-[4/5] md:aspect-auto md:h-full min-h-[300px]">
                 <img
                   src={selectedItem.imageUrl}
                   alt={selectedItem.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-4 left-4 bg-perola/90 backdrop-blur-md px-2.5 py-1 text-[8px] font-bold tracking-widest text-dourado uppercase">
+                <span className="absolute top-4 left-4 bg-perola/90 px-2.5 py-1 text-[8px] font-bold tracking-widest text-dourado uppercase">
                   {selectedItem.category}
                 </span>
               </div>
 
-              {/* Details Column */}
               <div className="md:col-span-5 p-8 flex flex-col justify-between bg-perola">
                 <div className="space-y-6">
-                  {/* Close button inside panel for mobile */}
                   <div className="flex justify-between items-center border-b border-cinza-medio pb-4">
                     <span className="font-sans text-[10px] tracking-widest uppercase font-semibold text-dourado">
                       Portfólio Ane Souza

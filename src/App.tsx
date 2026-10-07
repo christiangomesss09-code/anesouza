@@ -11,8 +11,16 @@ import ResultsGallery from './components/ResultsGallery';
 // Images
 import heroVideo from './assets/images/video/video-apresentacao-horizontal.mp4';
 import logoImg from './assets/images/lash/logo nova.png';
-import browsImg from './assets/images/novas imagens/sobrancelha-design.webp';
-import lashesImg from './assets/images/novas imagens/cilios-fio-a-fio-olho-azul.webp';
+
+const BASE_IMG = 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image';
+
+const browsImg = `${BASE_IMG}?prompt=${encodeURIComponent(
+  'Editorial close-up photography of elegant Brazilian woman face with perfectly sculpted customized eyebrow design, microblading-style natural hair strokes, soft henna gradient filling, precise golden-ratio facial symmetry, gentle warm rim lighting on pearl beige seamless studio background, glossy nude lip, subtle champagne gold jewelry detail, ultra-sharp focus on eyebrows, luxurious minimalist high-end beauty editorial aesthetic, 85mm portrait lens shallow depth of field, photorealistic'
+)}&image_size=portrait_4_3`;
+
+const lashesImg = `${BASE_IMG}?prompt=${encodeURIComponent(
+  'Cinematic three-quarter close-up of sophisticated woman eye decorated with luxurious volume eyelash extensions, doll-eye mixed-length mapping with darker dense outer corner, perfectly isolated fanned lashes catching soft warm studio light, porcelain skin with nude eyeshadow, subtle champagne inner corner highlight, pearl ivory seamless studio backdrop, premium lash salon editorial aesthetic, 100mm macro portrait lens ultra-sharp focus on eyelashes, shallow depth of field, photorealistic'
+)}&image_size=portrait_4_3`;
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -37,7 +45,7 @@ export default function App() {
     setIsBookingOpen(true);
   };
 
-  const WA_LINK = 'http://wa.me/+5551980889798/';
+  const WA_LINK = 'http://wa.me/+5519994645445/';
 
   return (
     <div className="min-h-screen bg-perola flex flex-col relative text-grafite antialiased selection:bg-dourado selection:text-perola">
@@ -48,12 +56,9 @@ export default function App() {
       {/* HERO SECTION */}
       <section 
         id="inicio" 
-        className="relative min-h-[100vh] lg:min-h-screen flex items-center pt-36 pb-20 md:pt-44 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-perola"
+        className="min-h-[100vh] lg:min-h-screen flex items-center pt-36 pb-20 md:pt-44 md:pb-24 lg:pt-48 lg:pb-32 bg-perola"
       >
-        {/* Subtle decorative grid background */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Hero Left Content */}
           <div className="lg:col-span-6 space-y-8 text-left">
@@ -99,11 +104,8 @@ export default function App() {
           </div>
 
           {/* Hero Right Media */}
-          <div className="lg:col-span-6 relative flex justify-center items-center">
-            {/* Elegant architectural arch or geometric thin frame wrapping the hero salon image */}
-            <div className="w-full max-w-lg aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg">
-              <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
-              
+          <div className="lg:col-span-6 flex justify-center items-center">
+            <div className="w-full max-w-lg aspect-[4/5] bg-perola border border-cinza-medio p-3 shadow-lg">
               <video
                 src={heroVideo}
                 autoPlay
@@ -116,16 +118,10 @@ export default function App() {
           </div>
 
         </div>
-
-        {/* Elegant scroll down indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 pointer-events-none">
-          <span className="font-sans text-[9px] uppercase tracking-[0.3em] text-cinza-medio font-medium">Scroll down</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-cinza-medio to-transparent animate-pulse" />
-        </div>
       </section>
 
       {/* SEÇÃO 2 — CONEXÃO */}
-      <section className="py-24 md:py-32 bg-perola relative border-y border-cinza-medio/40">
+      <section className="py-24 md:py-32 bg-perola border-y border-cinza-medio/40">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -138,7 +134,6 @@ export default function App() {
               <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
                 Um cuidado com <span className="italic text-rose">você</span>.
               </h2>
-              <div className="w-12 h-[1px] bg-dourado mt-6" />
             </div>
 
             {/* Paragraph Description */}
@@ -146,8 +141,6 @@ export default function App() {
               <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
                 Seu rosto tem características únicas. Por isso, não acreditamos em um formato padrão de beleza.
               </p>
-              
-              <div className="w-full h-[1px] bg-cinza-medio/30" />
               
               <p className="font-sans text-sm md:text-base text-grafite/80 leading-relaxed font-light">
                 Na Ane Souza, cada atendimento é pensado individualmente para criar um resultado que combine com seu olhar, seu rosto e seu estilo.
@@ -167,16 +160,13 @@ export default function App() {
       <Specialties />
 
       {/* SEÇÃO 4 — SOBRANCELHAS */}
-      <section id="sobrancelhas" className="py-24 md:py-32 bg-perola relative border-y border-cinza-medio/40">
-        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-dourado/5 rounded-full blur-[120px] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <section id="sobrancelhas" className="py-24 md:py-32 bg-perola border-y border-cinza-medio/40">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Imagem */}
-            <div className="lg:col-span-6 relative">
-              <div className="aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:mx-0">
-                <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
+            <div className="lg:col-span-6">
+              <div className="aspect-[4/5] bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:mx-0">
                 <img
                   src={browsImg}
                   alt="Design de Sobrancelhas"
@@ -195,7 +185,6 @@ export default function App() {
                 <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
                   Sobrancelhas que <span className="italic text-rose">valorizam</span> o seu rosto.
                 </h2>
-                <div className="w-12 h-[1px] bg-dourado" />
               </div>
 
               <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
@@ -229,10 +218,8 @@ export default function App() {
       </section>
 
       {/* SEÇÃO 5 — LASH DESIGN */}
-      <section id="lash-design" className="py-24 md:py-32 bg-perola relative">
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-rose/5 rounded-full blur-[120px] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <section id="lash-design" className="py-24 md:py-32 bg-perola">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Texto */}
@@ -244,7 +231,6 @@ export default function App() {
                 <h2 className="font-serif text-3xl md:text-5xl font-light tracking-wide text-grafite leading-tight">
                   Um olhar que <span className="italic text-rose">fala</span> por você.
                 </h2>
-                <div className="w-12 h-[1px] bg-dourado" />
               </div>
 
               <p className="font-serif text-xl md:text-2xl text-grafite leading-relaxed font-light">
@@ -255,20 +241,9 @@ export default function App() {
                 Considerando o formato do seu olhar e o efeito que você deseja, cada fio é estrategicamente posicionado para entregar o resultado ideal.
               </p>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-                  <p className="font-sans text-sm text-grafite font-medium">Mais definição.</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-                  <p className="font-sans text-sm text-grafite font-medium">Mais presença.</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-dourado shrink-0" />
-                  <p className="font-sans text-sm text-grafite font-medium">Mais confiança.</p>
-                </div>
-              </div>
+              <p className="font-sans text-sm text-grafite font-medium">Mais definição.</p>
+              <p className="font-sans text-sm text-grafite font-medium">Mais presença.</p>
+              <p className="font-sans text-sm text-grafite font-medium">Mais confiança.</p>
 
               <p className="font-sans text-sm md:text-base text-grafite leading-relaxed font-semibold pt-2">
                 Sem perder a sua essência.
@@ -289,9 +264,8 @@ export default function App() {
             </div>
 
             {/* Imagem */}
-            <div className="lg:col-span-6 lg:order-2 relative order-1">
-              <div className="aspect-[4/5] relative bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:ml-auto lg:mr-0">
-                <div className="absolute inset-0 border border-dourado/40 m-6 pointer-events-none z-10" />
+            <div className="lg:col-span-6 lg:order-2 order-1">
+              <div className="aspect-[4/5] bg-perola border border-cinza-medio p-3 shadow-lg max-w-md mx-auto lg:ml-auto lg:mr-0">
                 <img
                   src={lashesImg}
                   alt="Lash Design"
@@ -312,11 +286,8 @@ export default function App() {
       <ResultsGallery />
 
       {/* CTA FINAL */}
-      <section className="py-24 md:py-32 bg-grafite text-perola relative overflow-hidden text-center">
-        {/* Ambient background accent */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-dourado/5 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-8">
+      <section className="py-24 md:py-32 bg-grafite text-perola text-center">
+        <div className="max-w-4xl mx-auto px-6 space-y-8">
           <span className="font-sans text-xs uppercase tracking-[0.3em] text-dourado font-semibold block">
             Pronta para valorizar o seu olhar?
           </span>
@@ -354,7 +325,7 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-perola border-t border-cinza-medio/30 py-16 md:py-24 text-grafite relative">
+      <footer className="bg-perola border-t border-cinza-medio/30 py-16 md:py-24 text-grafite">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-cinza-medio/30 pb-16">
@@ -393,15 +364,14 @@ export default function App() {
                   <div className="flex gap-2.5 items-start">
                     <MapPin size={16} className="text-dourado shrink-0 mt-0.5" />
                     <span>
-                      Av. Plínio Brasil Milano, 280<br />
-                      Higienópolis, Porto Alegre - RS<br />
-                      CEP: 90520-000
+                      Av. Baden Powell, 1402<br />
+                      Jardim Nova Europa, Campinas - SP
                     </span>
                   </div>
                   <div className="flex gap-2.5 items-start">
                     <Phone size={16} className="text-dourado shrink-0 mt-0.5" />
                     <a href={WA_LINK} target="_blank" rel="noreferrer" className="hover:text-dourado font-medium">
-                      +55 (51) 98088-9798
+                      +55 (19) 99464-5445
                     </a>
                   </div>
                   <div className="flex gap-2.5 items-start">
@@ -470,7 +440,7 @@ export default function App() {
       <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center justify-center">
         <div className="absolute w-full h-full bg-[#25D366] rounded-full animate-ping opacity-20"></div>
         <a
-          href="http://wa.me/+5551980889798/"
+          href="http://wa.me/+5519994645445/"
           target="_blank"
           rel="noreferrer"
           className="relative w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"

@@ -5,26 +5,34 @@ export const SERVICES: Service[] = [
   {
     id: 'lash-1',
     category: 'cilios',
-    name: 'Extensão de Cílios Fio a Fio Clássica',
-    description: 'Aplicação minuciosa de um fio de seda sobre cada cílio natural, criando um olhar delineado e natural.',
+    name: 'Clássico Fio a Fio',
+    description: 'Aplicação de um fio sintético de alta qualidade sobre cada cílio natural. Resultado elegante, delineado e discreto, ideal para quem busca naturalidade.',
     duration: '120 min',
     priceEstimate: 'R$ 190'
   },
   {
     id: 'lash-2',
     category: 'cilios',
-    name: 'Volume Russo Elegante',
-    description: 'Aplicação de leques (fans) ultra-leves e artesanais para dar densidade, volume e sofisticação ao olhar.',
-    duration: '150 min',
-    priceEstimate: 'R$ 240'
+    name: 'Volume Brasileiro - Fio Y',
+    description: 'Técnica com fios em formato Y pré-montados, oferecendo o dobro de volume com o mesmo peso do fio a fio clássico. Leveza e definição equilibrada.',
+    duration: '130 min',
+    priceEstimate: 'R$ 220'
   },
   {
-    id: 'lash-3',
+    id: 'lash-4',
     category: 'cilios',
-    name: 'Lash Lifting & Nutrição de Queratina',
-    description: 'Curvatura e coloração dos próprios cílios naturais, combinados com um banho de queratina e vitaminas.',
-    duration: '60 min',
-    priceEstimate: 'R$ 140'
+    name: 'Volume Glamour - Fio 5D',
+    description: 'Leques com 5 fios ultra-leves para um visual marcante e sofisticado. Perfeito para ocasiões especiais ou para quem ama um olhar mais dramático.',
+    duration: '180 min',
+    priceEstimate: 'R$ 310'
+  },
+  {
+    id: 'lash-5',
+    category: 'cilios',
+    name: 'Mega Volume - 8D',
+    description: 'O ápice da técnica: leques com 8 fios ultra-finos para um volume impactante, glamouroso e de tirar o fôlego. Maxima densidade com conforto.',
+    duration: '210 min',
+    priceEstimate: 'R$ 380'
   },
 
   // Sobrancelhas
@@ -54,87 +62,60 @@ export const SERVICES: Service[] = [
   }
 ];
 
-import imgCiliosFioAFio from './assets/images/novas imagens/cilios-fio-a-fio-olho-azul.webp';
-import imgCiliosCliente from './assets/images/novas imagens/cilios-sobrancelha-cliente.webp';
-import imgCiliosVolume from './assets/images/novas imagens/cilios-volume-russo.webp';
-import imgLojaBalcao from './assets/images/novas imagens/loja-balcao-vertical.webp';
-import imgLojaCorredor1 from './assets/images/novas imagens/loja-corredor-1.webp';
-import imgLojaCorredor2 from './assets/images/novas imagens/loja-corredor-2.webp';
-import imgMacaCilios from './assets/images/novas imagens/maca-cilios.webp';
-import imgSobrancelhaDesign from './assets/images/novas imagens/sobrancelha-design.webp';
-import imgVitrineDia from './assets/images/novas imagens/vitrine-dia.webp';
-import imgVitrineNoite from './assets/images/novas imagens/vitrine-noite.webp';
+const BASE_IMG = 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image';
+
+const gImg = (prompt: string, size = 'portrait_4_3' as const) =>
+  `${BASE_IMG}?prompt=${encodeURIComponent(prompt)}&image_size=${size}`;
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g-1',
     category: 'cilios',
-    title: 'Volume Russo Soft',
-    description: 'Volume sofisticado sem carregar o olhar. Leveza e elegância.',
-    imageUrl: imgCiliosVolume
+    title: 'Volume Egípcio 3D',
+    description: 'Leques artesanais com três fios ultra-finos. Densidade elegante e equilibrada.',
+    imageUrl: gImg('Extreme close-up macro of woman eye with Egyptian 3D volume handmade fan eyelash extensions, three ultra-fine lashes per point, balanced elegant density, warm golden studio lighting, luxury beauty aesthetic, photorealistic')
   },
   {
     id: 'g-2',
     category: 'sobrancelhas',
-    title: 'Design de Sobrancelhas & Alinhamento',
-    description: 'Harmonização de traços com máxima naturalidade e simetria.',
-    imageUrl: imgSobrancelhaDesign
+    title: 'Design de Sobrancelhas & Henna',
+    description: 'Harmonização de traços com henna orgânica. Simetria milimétrica e naturalidade.',
+    imageUrl: gImg('Close-up of perfectly shaped woman eyebrows with organic henna stain and customized design, symmetrical facial golden ratio proportion, natural hair strokes, warm soft beauty studio light, nude beige tones, premium brow aesthetic, photorealistic')
   },
   {
     id: 'g-3',
     category: 'sobrancelhas',
-    title: 'Lash & Brow Transformation',
-    description: 'A transformação completa do olhar, combinando cílios e sobrancelhas.',
-    imageUrl: imgCiliosCliente
+    title: 'Transformação Lash & Brow',
+    description: 'A transformação completa do olhar combinando cílios volumosos e sobrancelhas alinhadas.',
+    imageUrl: gImg('Portrait of elegant Brazilian woman with complete eye transformation, full volume eyelash extensions and perfectly shaped eyebrows, warm soft studio lighting, luxury beauty salon background, natural nude makeup, high-end aesthetic, photorealistic')
   },
   {
     id: 'g-4',
     category: 'cilios',
-    title: 'Lash Design Personalizado',
-    description: 'Fio a fio azul com resultado marcante e respeitando a essência.',
-    imageUrl: imgCiliosFioAFio
-  },
-  {
-    id: 'g-5',
-    category: 'cilios',
-    title: 'Maca Premium para Atendimento',
-    description: 'Conforto e privacidade em cada detalhe do seu atendimento.',
-    imageUrl: imgMacaCilios
-  },
-  {
-    id: 'g-6',
-    category: 'sobrancelhas',
-    title: 'Recepção e Atendimento',
-    description: 'Ambiente acolhedor pensado exclusivamente para o seu momento.',
-    imageUrl: imgLojaBalcao
-  },
-  {
-    id: 'g-7',
-    category: 'cilios',
-    title: 'Interior Elegante do Estúdio',
-    description: 'Caminho de entrada decorado com sofisticação e requinte.',
-    imageUrl: imgLojaCorredor1
+    title: 'Clássico Fio a Fio',
+    description: 'Um fio por cílio natural. Resultado discreto, delineado e elegantemente natural.',
+    imageUrl: gImg('Beautiful natural eye with classic individual 1D eyelash extension, one premium synthetic lash applied per each natural eyelash, subtle elegant defined look, warm beige nude studio tones, soft luxury beauty lighting, photorealistic')
   },
   {
     id: 'g-8',
     category: 'sobrancelhas',
-    title: 'Experiência Completa do Espaço',
-    description: 'Ampla recepção e corredor de acesso com ambientação premium.',
-    imageUrl: imgLojaCorredor2
+    title: 'Ritual Brow Lamination',
+    description: 'Técnica de alinhamento dos fios com nutrição intensiva. Sobrancelhas encorpadas e modernas.',
+    imageUrl: gImg('Close-up of woman eyebrows during brow lamination ritual, perfectly aligned and full laminated brow hairs, nourishing oil application, premium beauty treatment scene, warm soft studio lighting, luxury aesthetic, photorealistic')
   },
   {
     id: 'g-9',
     category: 'cilios',
-    title: 'Fachada do Estúdio - Dia',
-    description: 'Entrada iluminada e convidativa para a sua visita.',
-    imageUrl: imgVitrineDia
+    title: 'Volume Glamour 5D',
+    description: 'Cinco fios ultra-leves por leque. Visual marcante perfeito para ocasiões especiais.',
+    imageUrl: gImg('Dramatic close-up eye with glamour 5D volume handmade fan eyelash extensions, five ultra-light fibers per point, striking sophisticated look, warm premium studio lighting, elegant makeup, luxury beauty photography aesthetic, photorealistic')
   },
   {
     id: 'g-10',
     category: 'sobrancelhas',
-    title: 'Fachada do Estúdio - Noite',
-    description: 'Ambiente intimista e sofisticado para atendimentos noturnos.',
-    imageUrl: imgVitrineNoite
+    title: 'Mega Volume 8D Impactante',
+    description: 'O ápice da técnica. Leques com oito fios ultra-finos e máxima densidade glamourosa.',
+    imageUrl: gImg('Extreme close-up of woman eye with breathtaking mega volume 8D handmade fan eyelash extensions, eight ultra-fine lashes per point, maximum density impactful glamorous statement lashes, luxury premium studio lighting, editorial high-end beauty aesthetic, photorealistic')
   }
 ];
 

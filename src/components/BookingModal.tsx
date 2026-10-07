@@ -119,7 +119,7 @@ ${servicesList}
 Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
 
     const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `http://wa.me/+5551980889798/?text=${encodedText}`;
+    const whatsappUrl = `http://wa.me/+5519994645445/?text=${encodedText}`;
     window.open(whatsappUrl, '_blank', 'noreferrer');
     onClose();
     // Reset state
@@ -140,9 +140,8 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-grafite/60 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-grafite/60"
         onClick={onClose}
       />
 
@@ -178,7 +177,6 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
           {step === 1 && (
             <div className="space-y-6">
               <div className="text-center max-w-md mx-auto">
-                <Sparkles className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">O que você deseja cuidar hoje?</h4>
                 <p className="text-xs text-grafite/70 mt-1">
                   Selecione um ou mais serviços para montar seu atendimento ideal.
@@ -250,7 +248,6 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
           {step === 2 && (
             <div className="space-y-6">
               <div className="text-center max-w-md mx-auto">
-                <User className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">Escolha a profissional</h4>
                 <p className="text-xs text-grafite/70 mt-1">
                   Atendimento personalizado pensado especialmente para você.
@@ -307,7 +304,6 @@ Estou aguardando a confirmação da disponibilidade! Muito obrigada.`;
           {step === 3 && (
             <div className="space-y-6">
               <div className="text-center max-w-md mx-auto">
-                <Calendar className="mx-auto text-dourado mb-2" size={24} />
                 <h4 className="font-serif text-lg text-grafite">Escolha a data e horário ideal</h4>
                 <p className="text-xs text-grafite/70 mt-1">
                   Selecione sua preferência de dia e horário. Vamos validar a agenda para lhe confirmar.

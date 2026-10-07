@@ -60,10 +60,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             <a
               key={link.name}
               href={link.href}
-              className="font-sans text-[10px] xl:text-xs uppercase tracking-wider xl:tracking-widest text-grafite/80 hover:text-dourado transition-colors duration-300 font-medium relative py-1 group"
+              className="font-sans text-[10px] xl:text-xs uppercase tracking-wider xl:tracking-widest text-grafite/80 hover:text-dourado transition-colors duration-300 font-medium py-1"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-dourado transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -71,7 +70,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <a 
-            href="http://wa.me/+5551980889798/"
+            href="http://wa.me/+5519994645445/"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1.5 font-sans text-[9px] xl:text-[10px] uppercase tracking-wider xl:tracking-widest bg-grafite text-perola hover:bg-dourado hover:text-perola px-3 xl:px-4 py-2 xl:py-2.5 border border-grafite hover:border-dourado transition-all duration-300 font-medium rounded-none shadow-sm"
@@ -110,7 +109,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
           <div className="flex flex-col gap-6 mb-12">
             <a
-              href="http://wa.me/+5551980889798/"
+              href="http://wa.me/+5519994645445/"
               target="_blank"
               rel="noreferrer"
               className="w-full flex items-center justify-center gap-2 font-sans text-xs uppercase tracking-widest bg-grafite text-perola py-4 font-semibold hover:bg-dourado transition-colors"
@@ -119,7 +118,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               Agendar Horário
             </a>
             <div className="text-center text-xs text-grafite/50 tracking-wider">
-              Av. Plínio Brasil Milano, 280 • Porto Alegre, RS
+              Av. Baden Powell, 1402 • Campinas, SP
             </div>
           </div>
         </div>

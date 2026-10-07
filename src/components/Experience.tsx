@@ -1,6 +1,6 @@
 import { Heart, Crosshair, Sparkles, User } from 'lucide-react';
 
-const WA_LINK = 'http://wa.me/+5551980889798/';
+const WA_LINK = 'http://wa.me/+5519994645445/';
 
 export default function Experience() {
   const experiences = [
@@ -27,11 +27,8 @@ export default function Experience() {
   ];
 
   return (
-    <section id="diferencial" className="py-24 md:py-32 bg-perola relative overflow-hidden">
-      {/* Absolute decorative blurred circle to make it look ambient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-dourado/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <section id="diferencial" className="py-24 md:py-32 bg-perola">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Title */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 md:mb-24">
@@ -48,20 +45,16 @@ export default function Experience() {
               Cada atendimento é pensado para entregar um resultado que faça sentido para você. Técnica, acolhimento e respeito à sua essência.
             </p>
           </div>
-        </div>
-
-        {/* Experience Pillars Grid */}
+        </div>        {/* Experience Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {experiences.map((exp, index) => (
             <div 
               key={index}
               className="bg-perola border border-cinza-medio p-8 flex flex-col justify-between transition-all duration-500 hover:border-dourado hover:shadow-md group relative overflow-hidden"
             >
-              {/* Top border decor */}
               <div className="absolute top-0 left-0 w-0 h-[2px] bg-dourado transition-all duration-500 group-hover:w-full" />
               
               <div className="space-y-4">
-                {/* Icon wrapper */}
                 <div className="w-10 h-10 bg-perola border border-cinza-medio/30 flex items-center justify-center transition-colors duration-500 group-hover:bg-dourado/10">
                   {exp.icon}
                 </div>
@@ -75,7 +68,6 @@ export default function Experience() {
                 </p>
               </div>
 
-              {/* Number tag */}
               <div className="mt-8 pt-4 border-t border-cinza-medio/30 flex justify-end">
                 <span className="font-sans text-[10px] text-cinza-medio font-bold tracking-widest uppercase select-none group-hover:text-dourado transition-colors duration-300">
                   Diferencial 0{index + 1}
@@ -85,7 +77,6 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-16 md:mt-24">
           <a
             href={WA_LINK}
